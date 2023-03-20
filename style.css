@@ -6,7 +6,6 @@
 ul, ol, li {
     list-style: none;
 }
-
 path {
     /* cor */
     fill: #eccea7;
@@ -19,23 +18,20 @@ path {
     cursor: pointer;
     transition: 2s;
 }
-
 path:hover {
     fill: #FA9E27;
 }
-
 .map-container{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    
 }
-
 .card{
     width: 375px;
     height: 417px;
     background-color: #eccea7;
     padding: 15px;
+    overflow-x: auto;
 }
 .container-info{
     display: grid;
@@ -70,13 +66,27 @@ path:hover {
     font-size: 3rem;
     color: #FA9E27;
 }
+.info-capital{
+    display: flex;
+}
+.info-capital p{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.info-regiao{
+    display: flex;
+}
+.info-regiao p{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
 .cidades{
+    overflow: hidden;
+}
+.cidades ul{
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
     justify-content: space-around;
     align-items: center;
-    padding-top: 20px;
 }
 .cidades li{
     font-size: 0.7rem;

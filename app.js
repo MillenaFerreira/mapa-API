@@ -1,25 +1,31 @@
 'use strict'
 
-import { getDadosEstados } from "./estados_cidades.js";
+import { getDadosEstados, getCidades } from "./estados_cidades.js";
 
 const mapa = document.querySelector('svg')
 
-const getEstados = (event) => {
-    const estado = event.target.id.replace('BR-','');
-    preencherDados(estado);
-    console.log(preencherDados(estado));
+const getEstados = async(event) => {
+    const estadoClicado = event.target.id.replace('BR-','')
+    const estado = await getDadosEstados(estadoClicado)
+    const cidades = await getCidades(estadoClicado)
+  
+    console.log(cidades);
+
+    document.getElementById('uf').textContent = estado.uf
+    document.getElementById('estado').textContent = estado.descricao
+    document.getElementById('capital').textContent = estado.capital
+    document.getElementById('regiao').textContent = estado.regiao
+    //document.getElementById('cidades').textContent = cidades.cidades
+
+    const ul = document.getElementById('lista-cidades')
+
+    cidades.cidades.forEach(function(cidade){
+        const lista = document.createElement('li')
+        lista.textContent = cidade
+        ul.append(lista)
+    })
 }
 
- const preencherDados = async () => {
-    
-    document.getElementById('uf').value = estado.uf
-    document.getElementById('estado').value = estado.descricao
-    document.getElementById('capital').value = estado.capital
-    document.getElementById('regiao').value = estado.regiao
-
-    log
-
-}
 
 mapa.addEventListener('click', getEstados)
 
