@@ -19,6 +19,8 @@ const getEstados = async(event) => {
 
     const ul = document.getElementById('lista-cidades')
 
+    ul.textContent = ""
+
     cidades.cidades.forEach(function(cidade){
         const lista = document.createElement('li')
         lista.textContent = cidade

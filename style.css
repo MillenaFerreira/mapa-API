@@ -82,11 +82,11 @@ path:hover {
     overflow: hidden;
 }
 .cidades ul{
-    display: flex;
+    display: grid;
+    grid-template-columns: 50% 50%;
     flex-wrap: wrap;
     gap: 10px;
-    justify-content: space-around;
-    align-items: center;
+    padding-top: 20px;
 }
 .cidades li{
     font-size: 0.7rem;
